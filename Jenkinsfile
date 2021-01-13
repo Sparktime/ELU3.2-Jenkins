@@ -34,7 +34,7 @@ pipeline {
          
                   stage('Neoload') {
             steps {
-                bat '"C:\\Program Files\\NeoLoad 7.7\\bin\\NeoLoadCmd.exe" -noGUI -project="C:\\School\\NeoLoad\\PerformanceTestV01\\PerformanceTestV01.nlp" -launch="scenario1" -report "C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\Pipeline\\NeoLoad\\report.xml"'
+                bat '"C:\\Program Files\\NeoLoad 7.7\\bin\\NeoLoadCmd.exe" -noGUI -project="C:\\School\\NeoLoad\\NeoloadV2\\NeoloadV2.nlp" "C:\\School\\NeoLoad\\NeoloadV2\\sla_profiles\\soapcall.xml"  -launch="scenario1" -report "C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\Pipeline\\NeoLoad\\report.xml"'
 				publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, includes: '**/*', keepAll: false, reportDir: 'Neoload', reportFiles: 'report.html', reportName: 'NeoLoad Report', reportTitles: ''])  
 
          }
